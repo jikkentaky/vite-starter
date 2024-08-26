@@ -12,7 +12,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "allowJs": false,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "jsx": "react-jsx",
     /* Linting */
     "strict": true,
@@ -28,7 +28,7 @@
     },
     "types": ["vite/client"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "vite.config.ts"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "references": [
     {

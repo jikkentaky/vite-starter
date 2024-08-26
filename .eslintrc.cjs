@@ -21,7 +21,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  ignorePatterns: ['dist', '.eslintrc.cjs', '!vite.config.ts'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/charting_library'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -29,7 +29,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.vite.json'],
+    project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
   plugins: [
