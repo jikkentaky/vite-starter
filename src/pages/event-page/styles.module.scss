@@ -1,0 +1,6 @@
+@import '@/assets/variables-colors';
+@import '@/assets/mixins';
+
+.container {
+  @include container;
+}

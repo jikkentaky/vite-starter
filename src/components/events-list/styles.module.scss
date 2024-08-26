@@ -1,0 +1,134 @@
+@import '@/assets/variables-colors';
+@import '@/assets/mixins';
+
+.events-list {
+  display: grid;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.title {
+  margin: 10px 0;
+
+  text-align: left;
+
+  font-size: $fs-18;
+
+  @include ellipsis;
+}
+
+.card {
+  min-height: 270px;
+
+  cursor: pointer;
+  text-align: center;
+
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    padding: 15px;
+    gap: 5px;
+  }
+
+  @include hover(box-shadow, 0 0 10px $color-black);
+}
+
+.card-image {
+  position: relative;
+}
+
+.card-overlay {
+  position: absolute;
+  right: 1px;
+  bottom: 0;
+  left: 1px;
+
+  display: none;
+
+  width: calc(100% - 2px);
+  height: 60px;
+
+  background-color: rgb(0 0 0 / 80%);
+}
+
+.card:hover .card-overlay {
+  display: flex;
+}
+
+.card-overlay-text {
+  width: 100%;
+  height: 100%;
+
+  color: $color-white;
+
+  font-weight: $fw-600;
+
+  @include flex-center;
+}
+
+.image {
+  max-width: 100%;
+  min-height: 270px;
+  padding: 1px;
+
+  border-radius: 8px 8px 0 0;
+}
+
+.date-wrapper {
+  display: flex;
+  align-items: center;
+
+  height: max-content;
+  gap: 10px;
+}
+
+.date {
+  font-size: $fs-14;
+}
+
+.span {
+  font-weight: $fw-500;
+}
+
+.modal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 400;
+  padding: 20px;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid $color-black;
+  border-radius: 4px;
+  background-color: $color-white;
+  box-shadow: 2px 2px 2px $color-light-grey;
+}
+
+.modal-title {
+  margin-top: 0;
+}
+
+.modal-description {
+  margin-bottom: 20px;
+}
+
+.ticket-wrapper {
+  @include flex-center;
+}
+
+.ticket-field {
+  width: 100px;
+}

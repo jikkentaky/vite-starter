@@ -1,0 +1,7 @@
+@import '@/assets/variables-colors';
+@import '@/assets/variables';
+@import '@/assets/mixins';
+
+.error-message {
+  @include error-message;
+}

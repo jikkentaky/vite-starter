@@ -1,0 +1,6 @@
+export { CalendarIcon } from '@/ui-components/icons/calendar-icon'
+export { ClockIcon } from '@/ui-components/icons/clock-icon'
+export { DollarIcon } from '@/ui-components/icons/dollar-icon'
+export { PlaceIcon } from '@/ui-components/icons/place-icon'
+export { TicketIcon } from '@/ui-components/icons/ticket-icon'
+export { LogoIcon } from '@/ui-components/icons/logo-icon'

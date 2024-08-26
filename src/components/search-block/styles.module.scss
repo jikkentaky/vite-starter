@@ -1,0 +1,26 @@
+@import '@/assets/variables-colors';
+@import '@/assets/mixins';
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin-top: 40px;
+  gap: 10px;
+
+  & > div {
+    width: 250px;
+  }
+}
+
+.search-field > div {
+  height: 40px;
+}
+
+.sort {
+  @include mobile {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
