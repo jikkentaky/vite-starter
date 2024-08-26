@@ -75,7 +75,7 @@ const FormEvent = () => {
         eventDate: new Date(selectedEvent.eventDate),
         country: selectedEvent.country,
         image: selectedEvent.image,
-        ticketPrice: Math.round(selectedEvent.ticketPrice / 1e6),
+        ticketPrice: selectedEvent.ticketPrice,
         ticketsCount: selectedEvent.ticketsCount,
         isTopEvent: selectedEvent.isTopEvent,
       })
@@ -172,7 +172,12 @@ const FormEvent = () => {
               errorMessage={errors.ticketsCount?.message}
             />
 
-            <Checkbox {...register('isTopEvent')} name="isTopEvent" label="Top event" />
+            <Checkbox
+              {...register('isTopEvent')}
+              name="isTopEvent"
+              label="Top event"
+              defaultChecked={selectedEvent?.isTopEvent}
+            />
           </Box>
 
           <FormControl>

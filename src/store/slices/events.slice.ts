@@ -103,7 +103,13 @@ const eventsSlice = createSlice({
     builder.addCase(updateEvent.pending, handlePending)
     builder.addCase(updateEvent.rejected, handleRejected(EventErrorMessage.FAILED_TO_UPDATE))
     builder.addCase(updateEvent.fulfilled, (state, { payload }: PayloadAction<SportEvent>) => {
-      if (!state.events || !state.events.length) return
+      if (!state.events || !state.events.length) {
+        state.selectedEvent = payload
+        console.log("🚀 ~ builder.addCase ~ payload:", payload)
+        state.isLoading = false
+        state.errorMessage = ''
+        return
+      }
 
       state.events = state.events.map((event: SportEvent) =>
         event.id === payload.id ? payload : event,

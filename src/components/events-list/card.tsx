@@ -30,7 +30,7 @@ const Card: FC<Props> = memo(({ event, handleOpen }) => {
     hour12: false,
   })
 
-  const ticketPrice = Math.round(event.ticketPrice / 1e6)
+  event.ticketPrice
   return (
     <Box className={styles.card} key={event.id}>
       <Box className={styles['card-image']}>
@@ -57,7 +57,7 @@ const Card: FC<Props> = memo(({ event, handleOpen }) => {
         <ContentItem icon={<DollarIcon />}>
           {'Ticket price: '}
 
-          <span className={styles.span}>{ticketPrice}</span>
+          <span className={styles.span}>{event.ticketPrice}</span>
         </ContentItem>
 
         <ContentItem icon={<TicketIcon />}>
