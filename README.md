@@ -6,35 +6,6 @@ npm install
 npm run dev
 ```
 
-## Using with Docker
-
-Pre-requisites:
-
-- Install [Docker](https://www.docker.com/get-docker) for your platform.
-- Install [docker-compose](https://docs.docker.com/compose/install/) for your platform.
-
-### Try with Docker
-
-Making sure you're in your project directory, run:
-
-```bash
-docker-compose -f docker-compose-dev.yml up
-```
-
-### Using on Production with Docker
-
-DISCLAIMER: This Docker configuration is for demonstration purposes only. If you plan to use this configuration in a production remember to adjust the Dockerfile for your project's needs!
-
-Making sure you're in your project directory, run:
-
-```bash
-docker-compose -f docker-compose.yml up
-```
-
-_By default it uses port 80_
-
-The production Dockerfile uses an nginx instance to run the built website, for more configuration options, see [nginx's dockerhub page](https://hub.docker.com/_/nginx)
-
 # Commits
 
 This project have commits configured to follow the Conventional Commits's best practice and it's configured with ESLint, Prettier and Stylelint.
