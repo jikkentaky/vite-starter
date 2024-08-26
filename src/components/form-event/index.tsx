@@ -3,10 +3,9 @@ import { Controller, useForm } from 'react-hook-form'
 import { useLocation, useParams } from 'react-router'
 
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Checkbox, Textarea } from '@mui/joy'
+import { Textarea } from '@mui/joy'
 import { Box, FormControl, FormLabel, Typography } from '@mui/material'
 import { DatePicker } from 'rsuite'
-import 'rsuite/DatePicker/styles/index.css'
 import * as yup from 'yup'
 
 import { useAppDispatch, useAppSelector } from '@/store'
@@ -14,6 +13,7 @@ import { createEvent, fetchEventById, updateEvent } from '@/store/slices/events.
 import { Button } from '@/ui-components/button'
 import { CustomInput } from '@/ui-components/custom-input'
 
+import 'rsuite/DatePicker/styles/index.css'
 import styles from './styles.module.scss'
 
 const schema = yup
@@ -25,7 +25,6 @@ const schema = yup
     image: yup.string().required(),
     ticketPrice: yup.number().positive('must be > 0').integer().required('required'),
     ticketsCount: yup.number().positive('must be > 0').integer().required('required'),
-    isTopEvent: yup.boolean().required(),
   })
   .required()
 
@@ -39,7 +38,6 @@ const defaultValues = {
   image: '',
   ticketPrice: 0,
   ticketsCount: 0,
-  isTopEvent: false,
 }
 
 const FormEvent = () => {
@@ -70,6 +68,7 @@ const FormEvent = () => {
   useEffect(() => {
     if (selectedEvent && isEdit) {
       reset({
+        ...defaultValues,
         name: selectedEvent.name,
         description: selectedEvent.description,
         eventDate: new Date(selectedEvent.eventDate),
@@ -77,7 +76,6 @@ const FormEvent = () => {
         image: selectedEvent.image,
         ticketPrice: selectedEvent.ticketPrice,
         ticketsCount: selectedEvent.ticketsCount,
-        isTopEvent: selectedEvent.isTopEvent,
       })
     } else {
       reset(defaultValues)
@@ -170,13 +168,6 @@ const FormEvent = () => {
               name="ticketsCount"
               className={styles['ticket-field']}
               errorMessage={errors.ticketsCount?.message}
-            />
-
-            <Checkbox
-              {...register('isTopEvent')}
-              name="isTopEvent"
-              label="Top event"
-              defaultChecked={selectedEvent?.isTopEvent}
             />
           </Box>
 

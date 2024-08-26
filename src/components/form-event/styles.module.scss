@@ -14,7 +14,8 @@
 }
 
 .wrapper {
-  @include flex-between;
+  display: flex;
+  justify-content: space-around;
 }
 
 .ticket-field {

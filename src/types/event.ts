@@ -6,7 +6,6 @@ interface SportEvent {
   description: string
   image: string
   ticketPrice: number
-  isTopEvent: boolean
   country: string
   id: string
 }
