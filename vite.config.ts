@@ -14,7 +14,7 @@ export default defineConfig({
   },
   envDir: './env/',
   optimizeDeps: {
-    include: ['@emotion/react', '@emotion/styled', 'rsuite'],
+    include: [],
   },
   plugins: [
     react({

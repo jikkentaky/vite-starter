@@ -1,25 +1,10 @@
-import { FC, useEffect } from 'react'
-import toast, { Toaster } from 'react-hot-toast'
-import { BrowserRouter as Router } from 'react-router-dom'
-
-import { Layout } from '@/components/layout'
-import { useAppSelector } from '@/store'
+import { FC } from 'react'
+import { Toaster } from 'react-hot-toast'
 
 const App: FC = () => {
-  const errorMessage = useAppSelector((state) => state.events.errorMessage)
-
-  useEffect(() => {
-    if (errorMessage) {
-      toast.error(errorMessage)
-    }
-  }, [errorMessage])
-
   return (
     <>
-      <Router>
-        <Layout />
-      </Router>
-
+      <div>Hello world</div>
       <Toaster />
     </>
   )
